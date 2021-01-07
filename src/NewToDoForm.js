@@ -11,7 +11,7 @@ class NewToDoForm extends Component {
     handleSubmit(e){
         e.preventDefault();
         const newTodo = {task: this.state.task, id: uuidv4()};
-        this.props.submitNewTodo(newTodo);
+        this.props.createTodo(newTodo);
         this.setState({task: ''});
     }
     handleChange(e){
@@ -20,6 +20,7 @@ class NewToDoForm extends Component {
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
+            <label htmlFor="task">New Todo</label>
                 <input
                 type="text" 
                 name="task" 
