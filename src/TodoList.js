@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { textSpanIsEmpty } from 'typescript';
 import NewToDoForm from './NewToDoForm';
 import Todo from './Todo'
+import './TodoList.css';
 
 class TodoList extends Component {
     constructor(props){
@@ -48,7 +49,9 @@ class TodoList extends Component {
                          />
         });
         return (
-            <div>
+            <div className="TodoList">
+                <h1>Todo List!<span>Innovative React Todo App.</span>
+                </h1>
                 <ul>{todoList}</ul>
                 <NewToDoForm createTodo={this.create} />
             </div>
